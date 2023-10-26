@@ -24,6 +24,7 @@ class MainDesign(context: Context) : Design<MainDesign.Request>(context) {
         OpenSettings,
         OpenHelp,
         OpenAbout,
+        Logout,
     }
 
     private val binding = DesignMainBinding

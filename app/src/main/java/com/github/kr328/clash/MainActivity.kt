@@ -1,15 +1,14 @@
 package com.github.kr328.clash
 
+import android.content.Intent
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.github.kr328.clash.common.util.intent
 import com.github.kr328.clash.common.util.ticker
 import com.github.kr328.clash.design.MainDesign
 import com.github.kr328.clash.design.ui.ToastDuration
 import com.github.kr328.clash.store.TipsStore
-import com.github.kr328.clash.util.startClashService
-import com.github.kr328.clash.util.stopClashService
-import com.github.kr328.clash.util.withClash
-import com.github.kr328.clash.util.withProfile
+import com.github.kr328.clash.util.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
@@ -64,6 +63,8 @@ class MainActivity : BaseActivity<MainDesign>() {
                             startActivity(HelpActivity::class.intent)
                         MainDesign.Request.OpenAbout ->
                             design.showAbout(queryAppVersionName())
+                        MainDesign.Request.Logout ->
+                            Logout()
                     }
                 }
                 if (clashRunning) {
@@ -147,5 +148,19 @@ class MainActivity : BaseActivity<MainDesign>() {
         return withContext(Dispatchers.IO) {
             packageManager.getPackageInfo(packageName, 0).versionName
         }
+    }
+
+    private fun Logout() {
+        Toast.makeText(this, "Logout successful", Toast.LENGTH_SHORT).show()
+        Utility.setUserLogin(this, false)
+        Utility.setUserDetails(this, "")
+        Utility.setAccessToken(this, "")
+        Utility.setAuthData(this, "")
+        startActivity(
+            Intent(
+                this,
+                ActivityLogin::class.java
+            ).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        )
     }
 }

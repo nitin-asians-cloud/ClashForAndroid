@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llbottomSection"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Email Address"
+                android:textColor="#000000"
+                android:textSize="12sp"></TextView>
+
+            <EditText
+                android:id="@+id/edtTxtLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_editext_rounded_bg"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="16sp"></EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Password"
+                android:textColor="#000000"
+                android:textSize="12sp"></TextView>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_editext_rounded_bg">
+
+                <EditText
+                    android:id="@+id/edtTxtLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="16sp"></EditText>
+
+                <TextView
+                    android:id="@+id/tvLoginShowPWD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:text="Show"
+                    android:textAllCaps="true"
+                    android:textColor="#717171"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/btnSubmitLogin"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_submit_btn_rounded_bg"
+                android:gravity="center"
+                android:text="Sign in"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
